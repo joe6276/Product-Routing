@@ -1,0 +1,28 @@
+<div *ngIf="!allowedit">
+<h4>You are not allowed to Edit !! Contact Admin</h4>
+</div>
+
+<div *ngIf="allowedit">
+    
+    <div class="content">
+
+        <h1>Edit Product </h1>
+        <div *ngIf="isinvalid">
+            <p [style]="{color:'red'}">* Please input all fields</p>
+            </div>
+    <label for=""> Product Name</label>
+    <input  class='txt' [(ngModel)]="productname" type="text" />
+    <label for=""> Product Description</label>
+    <input  class='txt' [(ngModel)]="productdescription" type="text" />
+    <label for=""> Product Price</label>
+    <input  class='txt' [(ngModel)]="price"   type="number" />
+    
+    
+    <button (click)="editProduct()" class="btn">Update Product</button>
+    
+    
+    
+    
+    </div>
+</div>
+

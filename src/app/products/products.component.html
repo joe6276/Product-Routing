@@ -1,0 +1,14 @@
+
+<div class="container">
+
+    <div class="left">
+        <a routerLinkActive="selected" [routerLink]="['/products',product.id]" 
+        [queryParams]="{allowEdit:product.role ==='admin'?'1':'0' }"
+        class="p-name" *ngFor="let product of products">
+            {{product.name}}
+        </a>
+    </div>
+    <div class="right">
+       <router-outlet></router-outlet>
+    </div>
+</div>
