@@ -57,7 +57,9 @@ getAllProducts(){
   return this.products
 }
 
-getProduct(id:string){
+  getProduct(id: string) {
+  //
+  //
   return this.products.find(product=>product.id===id)
 }
 

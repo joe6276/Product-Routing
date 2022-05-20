@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Data, Params, Router } from '@angular/router';
 import { Product } from 'src/app/Interface/product';
 import { ProductService } from 'src/app/Services/product.service';
 
@@ -16,10 +16,15 @@ product?:Product
   ngOnInit(): void {
       //  this.id=this.route.snapshot.params['id']
       //   this.product=this.productService.getProduct(this.id)
-      this.route.params.subscribe((params:Params)=>{
-        this.id=params['id']
-        this.product=this.productService.getProduct(this.id)
-      })
+      // this.route.params.subscribe((params:Params)=>{
+      //   this.id=params['id']
+      //   this.product=this.productService.getProduct(this.id)
+      // })
+    
+    this.route.data.subscribe((data: Data) => {
+      this.product = data["product"]
+      
+    })
 
       
   }

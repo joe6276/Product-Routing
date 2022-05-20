@@ -11,6 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { EditProductComponent } from './products/edit-product/edit-product.component';
 import { PagenotFoundComponent } from './pagenot-found/pagenot-found.component';
 import { HomeUserComponent } from './home-user/home-user.component';
+import { AuthGuard } from './Services/auth-guard.service';
+import { AuthService } from './Services/auth.service';
+import { CanDeactivateGuard } from './Services/can-deactivate-guard.service';
+import { ProductResolver } from './Services/product-resolver.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,7 @@ import { HomeUserComponent } from './home-user/home-user.component';
     CommonModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard, CanDeactivateGuard, ProductResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
